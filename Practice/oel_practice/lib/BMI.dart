@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'Home.dart';
 
 class BMI extends StatelessWidget {
@@ -60,7 +59,7 @@ class BMI extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () {
                     double bmi = calculateBMI();
-                    Navigator.pushReplacement(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) =>

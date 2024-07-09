@@ -5,21 +5,38 @@ void main() {
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({Key? key}) : super(key: key);
-
+  const MainApp({super.key});
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Center(
-              child: Text('App Bar', style: TextStyle(color: Colors.white))),
-          backgroundColor: Colors.purple,
-        ),
         body: Center(
-          child: Text('Hello World!'),
+          child: Column(children: [
+            Row(children: [
+              TextFormField(
+                  autovalidateMode: AutovalidateMode.always,
+                  decoration: InputDecoration(
+                  labelText: 'Username',
+                  hintText: 'What do people call you?',
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.red),
+                  ),
+                  suffixIcon: Icon(
+                    Icons.person_outline_rounded,
+                    color: Colors.grey,
+                  ),
+
+                  ),
+                )
+            ],),
+
+
+
+          ],),
+ 
+          ),
         ),
-      ),
-    );
+      );
   }
 }
